@@ -1,0 +1,60 @@
+﻿@model IEnumerable<adventurechallenge.Models.Challenge>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ChallengeBeschrijving)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChallengeMoeilijkheid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChallengeKosten)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChallengeAantalMensen)
+        </th>
+        <th></th>
+    </tr>
+
+    @{
+        Random rnd = new Random();
+        // This will return either 1 or 2 randomly.
+        int willekeurig = rnd.Next(1, 3);
+    }
+    @foreach (var item in Model)
+    {
+        if (item.ChallengeNummer == willekeurig)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChallengeBeschrijving)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChallengeMoeilijkheid)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChallengeKosten)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ChallengeAantalMensen)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ChallengeNummer }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ChallengeNummer }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ChallengeNummer })
+                </td>
+
+            </tr>
+        }
+    }
+    </table>

@@ -26,5 +26,18 @@ namespace adventurechallenge.Controllers
 
             return View();
         }
+        
+        public ActionResult Login()
+        {
+            ViewBag.Message = "login pagina";
+
+            return View();
+        }
+        public ActionResult Challenge()
+        {
+            ViewBag.Message = "challenge pagina";
+
+            return View();
+        }
     }
 }

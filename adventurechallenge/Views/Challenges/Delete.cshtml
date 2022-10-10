@@ -1,0 +1,56 @@
+﻿@model adventurechallenge.Models.Challenge
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Challenge</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ChallengeBeschrijving)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChallengeBeschrijving)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChallengeMoeilijkheid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChallengeMoeilijkheid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChallengeKosten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChallengeKosten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChallengeAantalMensen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChallengeAantalMensen)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

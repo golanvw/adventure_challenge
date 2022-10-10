@@ -1,0 +1,50 @@
+﻿@model adventurechallenge.Models.Challenge
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Challenge</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ChallengeBeschrijving)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChallengeBeschrijving)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChallengeMoeilijkheid)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChallengeMoeilijkheid)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChallengeKosten)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChallengeKosten)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChallengeAantalMensen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChallengeAantalMensen)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ChallengeNummer }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
