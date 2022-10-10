@@ -18,7 +18,7 @@ namespace adventurechallenge.Controllers
         // GET: Challenges
         public ActionResult Index()
         {
-            return View(db.Challenges.ToList());
+            return View();
         }
 
         // GET: Challenges/Details/5

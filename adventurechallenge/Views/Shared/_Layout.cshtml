@@ -34,6 +34,7 @@
                     @{
                         if (isloggedin)
                         {
+                            <li>@Html.ActionLink("challenge", "Index", "Challenges")</li>
                             <li>@Html.ActionLink(User.Identity.Name, "Index", "Home")</li>
                             <li>@Html.ActionLink("signout", "signout", "gebruikers")</li>
                         }
